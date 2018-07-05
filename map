@@ -1,0 +1,28 @@
+//Google Maps API is a blessing
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet"
+    href="/maps/documentation/javascript/cgc/demos.css">
+    </head>
+    <body>
+      <div id="map"></div>
+      <script>
+        function initMap()  {
+          var myLatLng = {lat: 47.6062, lng: 122.3321};
+          var map = new
+google.maps.Map(document.getElementById('map'), {
+          center: myLatLng,
+          zoom: 4
+         });
+         
+         //Create marker and set position
+         var marker = new google.maps.Marker({
+           map: map,
+           position: myLatLng,
+           title; 'ohoho'
+          });
+        }
+       </script>
+    </body>
+</html>
