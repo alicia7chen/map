@@ -18,8 +18,8 @@ var marker = new google.maps.Marker({position: myCenter});
 marker.setMap(map);
   google.maps.event.addListener(marker,'click',function() {
     var infowindow = new google.maps.InfoWindow({
-      content:"National Immigration Law Center: 
-        Right, laws, and tax filing assistance"
+      content: "<p> National Immigration Law Center: </p> 
+        <p>Right, laws, and tax filing assistance</p>"
     });
   infowindow.open(map,marker);
   });
