@@ -4,7 +4,7 @@
 
 <h1>Where He Be</h1>
 
-<div id="googleMap" style="width:90%;height:400px;"></div>
+<div id="googleMap" style="width:100%;height:400px;"></div>
 
 <script>
 function myMap() {
@@ -13,7 +13,6 @@ var mapProp= {
     zoom:4,
 };
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
 var myCenter = new google.maps.LatLng(34.0522,-118.2437);
 var marker = new google.maps.Marker({position: myCenter});
 marker.setMap(map);
@@ -23,6 +22,7 @@ marker.setMap(map);
     });
   infowindow.open(map,marker);
   });
+}
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMCS_k0u_rWdC7i7N7BtWagb_HrQJwVLI&callback=myMap"></script>
