@@ -19,32 +19,32 @@ function initMap() {
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById("map"), mapProp);
-var map;
-var infowindow = new google.maps.InfoWindow();
+    var map;
+    var infowindow = new google.maps.InfoWindow();
         
-var whosemans = {
-    "organizations": [
-    {
-      "Name": "Will",
-      "Description": "this",
-      "Services Offered": "work",
-      "Target Group": "I",
-      "Hours": "guess",
-      "Website": "we'll",
-      "Lat": "34.0522",
-      "Lng": "-118.2437",
-    },
-    {
-      "Name": "1",
-      "Description": "2",
-      "ServicesOffered": "3",
-      "TargetGroup": "4",
-      "Hours": "5",
-      "Website": "6",
-      "Lat": "34.1478",
-      "Lng": "-118.1445",
-    },
-   ]
+    var whosemans = {
+     "organizations": [
+        {
+        "Name": "Will",
+        "Description": "this",
+        "Services Offered": "work",
+        "Target Group": "I",
+        "Hours": "guess",
+        "Website": "we'll",
+        "Lat": "34.0522",
+        "Lng": "-118.2437",
+        },
+        {
+        "Name": "1",
+        "Description": "2",
+        "ServicesOffered": "3",
+        "TargetGroup": "4",
+        "Hours": "5",
+        "Website": "6",
+        "Lat": "34.1478",
+        "Lng": "-118.1445",
+        },
+     ]
   };
   $.each(whosemans.organizations, function (key, data) {
        var latLng = new google.maps.LatLng(data.Lat, data.Lng);
@@ -68,6 +68,7 @@ function bindInfoWindow(marker, map, infowindow, strDescription) {
         infowindow.setContent(strDescription);
         infowindow.open(map, marker);
     });
+  }
 }
 
 </script>
