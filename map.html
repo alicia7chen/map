@@ -14,8 +14,10 @@ function myMap() {
     var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
     var myCenter = new google.maps.LatLng(34.0522,-118.2437);
     }
-    var infowindow = new google.maps.InfoWindow();
-        
+    //var infowindow = new google.maps.InfoWindow();
+    var infowindow = new google.maps.InfoWindow({
+          content: json1
+        });
     var json1 = {
      "organizations": [
         {
