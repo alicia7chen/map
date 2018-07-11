@@ -16,7 +16,7 @@ function myMap() {
     }
     var infowindow = new google.maps.InfoWindow();
         
-    var whosemans = {
+    var json1 = {
      "organizations": [
         {
         "Name": "Name",
@@ -40,7 +40,7 @@ function myMap() {
         },
      ]
   };
-  $.each(whosemans.organizations, function (key, data) {
+  $.each(json1.organizations, function (key, data) {
        var latLng = new google.maps.LatLng(data.Lat, data.Lng);
        var marker = new google.maps.Marker({
            position: latLng,
