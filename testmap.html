@@ -1,21 +1,31 @@
+//doesn't accept line 6 as a thing? also script tag doesn't close
 <!DOCTYPE html>
-
+<style>
+    html, body, #map {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px
+    }
+</style>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMCS_k0u_rWdC7i7N7BtWagb_HrQJwVLI&callback=initMap"></script>
-<div id="map"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfOLJ0Dl4s_2qnOCmVSk6HPrr1oO3ODNk&callback=initMap"></script>
+    <div id="map"></div>
 </html>
 
 <script>
 var map;
 var infowindow = new google.maps.InfoWindow();
 function initMap() {
+    
     var mapProp = {
         center: new google.maps.LatLng(40.567166, -105.086933),
         zoom: 4,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById("map"), mapProp);
+    
 var whosemans = {
     "organizations": [
     {
