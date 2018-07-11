@@ -15,55 +15,6 @@ function myMap() {
     var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
     var myCenter = new google.maps.LatLng(34.0522,-118.2437);
     }
-    var infowindow = new google.maps.InfoWindow();
-    var whosemans = {
-     "organizations": [
-        {
-        "Name": "Name",
-        "Description": "Something",
-        "Services Offered": "Service",
-        "Target Group": "Group",
-        "Hours": "guess",
-        "Website": "link",
-        "Lat": "34.0522",
-        "Lng": "-118.2437",
-        },
-        {
-        "Name": "1",
-        "Description": "2",
-        "ServicesOffered": "3",
-        "TargetGroup": "4",
-        "Hours": "5",
-        "Website": "6",
-        "Lat": "34.1478",
-        "Lng": "-118.1445",
-        },
-     ]
-  };
-  $.each(whosemans.organizations, function (key, data) {
-       var latLng = new google.maps.LatLng(data.Lat, data.Lng);
-       var marker = new google.maps.Marker({
-           position: latLng,
-           map: map,
-           name: data.Name
-        });
-        var details = '<p><b>Name: '+data.Name +'</b></p>'+
-                      '<p>Description: '+ data.Description +'</p>'+
-                      '<p>Services Offered: '+ data.ServicesOffered +'</p>'+
-                      '<p>Target Group: '+ data.TargetGroup +'</p>'+
-                      '<p>Hours: '+ data.Hours +'</p>'+
-                      '<p>Website: '+ data.Website +'</p>'+
-        //var paragraph = '<div id="paragraph">'+'div id="siteNotice">'+'<div>'+
-        //  '<div id="bodyContent">'+''
-        bindInfoWindow(marker, map, infowindow, details);
-    });
-function bindInfoWindow(marker, map, infowindow, strDescription) {
-        google.maps.event.addListener(marker, 'click', function () {
-        infowindow.setContent(strDescription);
-        infowindow.open(map, marker);
-    });
-  }
-}
 //var marker = new google.maps.Marker({position: myCenter});
 //marker.setMap(map);
   //google.maps.event.addListener(marker,'click',function() {
