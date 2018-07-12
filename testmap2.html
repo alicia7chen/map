@@ -25,17 +25,38 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("map"), mapProp);
     var json1 = {
         "organizations": [
+            //empty reference code to pop in that info
+            //{
+            //"Name": "",
+            //"Description": "",
+            //"ServicesOffered": "",
+            //"AreasofLegalAssistance": "",
+            //"Lat": ,
+            //"Lng": ,
+            //"Address": "",
+            //"Contact": "",
+            //},
           {
             "Name": "Asian Counseling and Referral Service",
             "Description": "ACRS promotes social justice and the well-being and empowerment of Asian Americans and Pacific Islanders and other underserved communities – including immigrants, refugees, and American-born – by developing, providing and advocating for innovative, effective and efficient community-based multilingual and multicultural services.",
             "ServicesOffered": "Help completing forms, Filings with USCIS",
             "AreasofLegalAssistance": "Adjustment of Status, Consular Processing, Family-based petitions, Naturalization/Citizenship",
-            "TargetGroup": "Asian Americans, Pacific Islanders, immigrants, refugees, and underserved communities",
             "Lat": 47.570893,
             "Lng": -122.297385,
             "Address": "3639 Martin Luther King Jr. Way S., Seattle, WA 98144",
             "Contact": "(206) 695-7566, http://www.acrs.org",
           },
+          {
+            "Name": "Catholic Community Services - Family Immigration (Mount Vernon Office)",
+            "Description": "",
+            "ServicesOffered": "Help completing forms, Filings with USCIS",
+            "AreasofLegalAssistance": "	Adjustment of Status, Consular Processing, Deferred Action for Childhood Arrivals (DACA), Employment authorization, Family-based petitions, Naturalization/Citizenship, Temporary Protected Status (TPS)",
+            "Lat": ,
+            "Lng": ,
+            "Address": "300 S First St, Suite C, Mount Vernon, WA 98273",
+            "Contact": "(360) 416-7095, http://www.ccsww.org/cils, donnar@ccsww.org",
+            },
+            
         ]
      };
      $.each(json1.organizations, function (key, data) {
@@ -49,7 +70,6 @@ function initialize() {
                       '<p>Description: '+ data.Description +'</p>'+
                       '<p>Services Offered: '+ data.ServicesOffered +'</p>'+
                       '<p>Areas of Legal Assistance: '+ data.AreasofLegalAssistance +'</p>'+
-                      '<p>Target Group: '+ data.TargetGroup +'</p>'+
                       '<p>Address: '+ data.Address + '</p>'+
                       '<p>Contact: '+ data.Contact + '</p>'
         //var paragraph = '<div id="paragraph">'+'div id="siteNotice">'+'<div>'+
