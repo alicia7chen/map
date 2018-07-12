@@ -24,7 +24,7 @@ function initialize() {
     };
     map = new google.maps.Map(document.getElementById("map"), mapProp);
     var json1 = {
-        "individuals": [
+        "organizations": [
           {
             "Name": "Jeremy Holmes",
             "Age": 19,
@@ -34,17 +34,10 @@ function initialize() {
             "Lat": 40.5671661,
             "Lng": -105.0869334,
             "Agencyresponsiblefordeath": "Colorado State University Police Department, Fort Collins Police Department",
-            "Causeofdeath": "Gunshot",
-            "Abriefdescription": "Colorado State University Police officers responded to a report of a threatening man. Fort Collins Police Services officers arrived to assist. When officers contacted the man, police said they found him armed with a knife and shot and killed him.",
-            "Officialdispositionofdeath": "Pending investigation",
-            "CriminalCharges": "No known charges",
-            "Links": "http://denver.cbslocal.com/2017/07/02/colorado-state-university-officer-shooting/",
-            "Unarmed": "Unclear",
-            "AllegedWeapon": "unknown weapon"
           },
         ]
      };
-     $.each(json1.individuals, function (key, data) {
+     $.each(json1.organizations, function (key, data) {
         var latLng = new google.maps.LatLng(data.Lat, data.Lng);
         var marker = new google.maps.Marker({
             position: latLng,
@@ -57,13 +50,6 @@ function initialize() {
                       '<p>Race: '+ data.Race +'</p>'+
                       '<p>Date: '+ data.Date +'</p>'+
                       '<p>Agency Responsible for death: '+ data.Angencyresponsiblefordeath +'</p>'+
-                      '<p>Cause of death: '+data.Causeofdeath +'</p>'+
-                      '<p>A brief description: ' + data.Abriefdescription +'</p>'+
-                      '<p>Official disposition of death: '+ data.Officialdispositionofdeath +'</p>'+
-                      '<p>Criminal Charges: '+ data.CriminalCharges+'</p>'+
-                      '<p>Links: ' + data.Links + '</p>'+
-                      '<p>Unarmed?: ' + data.Unarmed + '</p>'+
-                      '<p>Alleged Weapon: ' + data.AllegedWeapon +'</p>'
         //var paragraph = '<div id="paragraph">'+'div id="siteNotice">'+'<div>'+
         //  '<div id="bodyContent">'+''
         bindInfoWindow(marker, map, infowindow, details);
