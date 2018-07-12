@@ -27,13 +27,13 @@ function initialize() {
         "organizations": [
           {
             "Name": "Jeremy Holmes",
-            "Age": 19,
-            "Gender": "Male",
-            "Race": "Unknown race",
-            "Date": "7/1/2017",
+            "Description": "description here",
+            "ServicesOffered": "service",
+            "TargetGroup": "group",
+            "Hours": "7/1/2017",
             "Lat": 40.5671661,
             "Lng": -105.0869334,
-            "Agencyresponsiblefordeath": "Colorado State University Police Department, Fort Collins Police Department",
+            "Website": "Colorado State University Police Department, Fort Collins Police Department",
           },
         ]
      };
@@ -45,11 +45,11 @@ function initialize() {
             name: data.Name
         });
         var details = '<p><b>Name: '+data.Name +'</b></p>'+
-                      '<p>Age: '+ data.Age +'</p>'+
-                      '<p>Gender: '+ data.Gender +'</p>'+
-                      '<p>Race: '+ data.Race +'</p>'+
-                      '<p>Date: '+ data.Date +'</p>'+
-                      '<p>Agency Responsible for death: '+ data.Angencyresponsiblefordeath +'</p>'
+                      '<p>Description: '+ data.Description +'</p>'+
+                      '<p>Services Offered: '+ data.ServicesOffered +'</p>'+
+                      '<p>Target Group: '+ data.TargetGroup +'</p>'+
+                      '<p>Hours: '+ data.Hours +'</p>'+
+                      '<p>Website: '+ data.Website +'</p>'
         //var paragraph = '<div id="paragraph">'+'div id="siteNotice">'+'<div>'+
         //  '<div id="bodyContent">'+''
         bindInfoWindow(marker, map, infowindow, details);
