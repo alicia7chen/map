@@ -27,15 +27,14 @@ function initialize() {
         "organizations": [
           {
             "Name": "Asian Counseling and Referral Service",
-            "Description": "",
-            "ServicesOffered": "service",
-            "AreasofLegalAssistance": "area",
-            "TargetGroup": "group",
-            "Lat": 40.5671661,
-            "Lng": -105.0869334,
-            "Address": "address",
-            "Contact": "contact",
-            "Website": "Colorado State University Police Department, Fort Collins Police Department",
+            "Description": "ACRS promotes social justice and the well-being and empowerment of Asian Americans and Pacific Islanders and other underserved communities – including immigrants, refugees, and American-born – by developing, providing and advocating for innovative, effective and efficient community-based multilingual and multicultural services.",
+            "ServicesOffered": "Help completing forms, Filings with USCIS",
+            "AreasofLegalAssistance": "Adjustment of Status, Consular Processing, Family-based petitions, Naturalization/Citizenship",
+            "TargetGroup": "Asian Americans, Pacific Islanders, immigrants, refugees, and underserved communities",
+            "Lat": 47.570893,
+            "Lng": -122.297385,
+            "Address": "3639 Martin Luther King Jr. Way S., Seattle, WA 98144",
+            "Contact": "(206) 695-7566, http://www.acrs.org",
           },
         ]
      };
@@ -52,8 +51,7 @@ function initialize() {
                       '<p>Areas of Legal Assistance: '+ data.AreasofLegalAssistance +'</p>'+
                       '<p>Target Group: '+ data.TargetGroup +'</p>'+
                       '<p>Address: '+ data.Address + '</p>'+
-                      '<p>Contact: '+ data.Contact + '</p>'+
-                      '<p>Website: '+ data.Website +'</p>'
+                      '<p>Contact: '+ data.Contact + '</p>'
         //var paragraph = '<div id="paragraph">'+'div id="siteNotice">'+'<div>'+
         //  '<div id="bodyContent">'+''
         bindInfoWindow(marker, map, infowindow, details);
