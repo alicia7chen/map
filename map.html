@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <head>
-<link href='https://fonts.googleapis.com/css?family=Carrois Gothic SC' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Average Sans' rel='stylesheet'>
-<title>Map </title>
+<title>Map</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <style>
@@ -12,83 +13,25 @@
     margin: 0px;
     padding: 0px
     }
-
-   .content {
-   float:left;
-   margin: 10px;
-   padding: 60px;
-   width:15vw;
-   height: 700px;
-   border: 3px solid #d11c00;
-   text-align:center;
-   font-family: 'Carrois Gothic SC';
-   }   
-    .header{
-    	text-align:center;    
-	}
-    h1 { 
-    font-size:5rem;
-    font: 'Carrois Gothic SC';
-    }
-	
-    .pagination a {
-    color: black;  
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;}
-    .pagination a.active {    	
-    background-color: whitesmoke;
-    color: black;
-    }
-    .pagination {
-	font-size: 20px;
-	font-family:Average Sans
-    }
-    
-    .pagination a:hover:not(.active) {background-color: whitesmoke;}
-	
-    h2{
-    font-size:4rem;
-    font: Average Sans;
-    }
-    h3{
-    font-size:3rem;
-    }
-    h4{
-    font-size:3rem;
-    }
-    h5{
-    font-size:4rem;
-    text-align:center;
-    }
-    
 </style>
+
+<body>
+
+<div class="container">
+  <h2>Map</h2>
+  <p></p>                  
+  <ul class="pagination">
+    <li><a href="#">Home Page</a></li>
+    <li><a href="#">Map</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</div>
+
+</body>
 <html>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy2kd4NkakHRrQzWue-fRE1S0JTkqwckU&callback=initMap"></script>
     <div id="map"></div>
-    <body>	
-    <body style="background-color:#dcdfe5;">
-    <div class="header">
-
-	<br>
-	<br>
-	<br>
-	<div class="pagination">
-		
-  	<a class="active" href="https://alicia7chen.github.io/a-good-time/map.html">Map</a>
-
-  	<a href="https://alicia7chen.github.io/a-good-time/about.html">About </a>
-
- 	<a href="https://alicia7chen.github.io/a-good-time/homepage.html">Home Page</a>
-
-</div>
-</div>
-</div>
-
-</section>	
-</body>
-
 </html>
 
 <script>
