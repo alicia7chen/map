@@ -39,8 +39,8 @@ var map;
 var infowindow = new google.maps.InfoWindow();
 function initialize() {
     var mapProp = {
-        center: new google.maps.LatLng(40.5921, -119.6005), //Vya, Nevada
-        zoom: 5.5,
+        center: new google.maps.LatLng(39.8097, -98.5556), //Lebanon, Kansas
+        zoom: 5,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById("map"), mapProp);
@@ -1264,7 +1264,67 @@ function initialize() {
             "Address": "3303 N. 3rd St., Suite D, Abilene, TX 79603",
             "Contact": "(325) 675-5643, http://www.rescue.org , abilene@rescue.org",
           },
-          
+          //State of Minnesota
+          {
+            "Name": "Arrive Ministries",
+            "Description": "Arrive Ministries (formerly World Relief Minnesota) is a Department of Justice (DOJ) accredited nonprofit that provides immigration legal services, along with a host of other social services, to refugees and immigrants. Arrive Ministries works in partnership with local churches and other nonprofits to fulfill its mission to serve refugee and immigrant neighbors together.",
+            "ServicesOffered": "Help completing forms, Filings with USCIS",
+            "AreasofLegalAssistance": "Adjustment of Status, Consular Processing, Employment authorization, Family-based petitions, Naturalization/Citizenship, Temporary Protected Status (TPS)",
+            "Lat": 44.883065,
+            "Lng": -93.253491,
+            "Address": "1515 E. 66th St, Richfield, MN 55423",
+            "Contact": "(612) 243-2961, http://www.arriveministries.org , immigration@arriveministries.org",
+          },
+          {
+            "Name": "Bridge to Life Legal Immigration Assistance Clinic",
+            "Description": "The Bridge to Life Legal Immigration Assistance Clinic is a DOJ-recognized clinic serving refugees and immigrants in family-related immigration law matters in the Twin Cities and surrounding communities of Minnesota.",
+            "ServicesOffered": "Help completing forms, Filings with USCIS",
+            "AreasofLegalAssistance": "Adjustment of Status, Consular Processing, Deferred Action for Childhood Arrivals (DACA), Employment authorization, Family-based petitions, Naturalization/Citizenship, T visas, U visas, Violence Against Women Act (VAWA) petitions",
+            "Lat": 44.757102,
+            "Lng": -93.357234,
+            "Address": "6201 W 135th Street, Savage, MN 55378",
+            "Contact": "(952) 226.6022, https://www.bridgetolife.us/ , btlclinic@bridgewood.org",
+          },
+          {
+            "Name": "Civil Society",
+            "Description": "Civil Society offers comprehensive legal services to victims of human trafficking, sexual assault including campus sexual assault, domestic violence, dating violence, stalking, and child sex tourism in the State of Minnesota. ",
+            "ServicesOffered": "Help completing forms, Filings with USCIS, Representation at Asylum Interviews (Credible Fear Interviews, Reasonable Fear Interviews), Representation before the Immigration Court, Representation before the Board of Immigration Appeals (BIA), Federal court appeals",
+            "AreasofLegalAssistance": "Adjustment of Status, Asylum applications, Consular Processing, Deferred Action for Childhood Arrivals (DACA), Employment authorization, Employment-based immigrant and non-immigrant petitions, Family-based petitions, Naturalization/Citizenship, Removal hearings, Special Immigrant Juvenile Status, T visas, Temporary Protected Status (TPS), U visas, Violence Against Women Act (VAWA) petitions",
+            "Lat": 44.946829,
+            "Lng": -93.167780,
+            "Address": "1595 Selby Avenue, Suite 112, St Paul, MN 55104",
+            "Contact": "(651) 291-0713, http://www.civilsocietyhelps.org , office@civilsocietyhelps.org",
+          },
+          {
+            "Name": "Immigrant Hope",
+            "Description": "They offer reliable, low-cost immigration legal advice and services in a safe and caring environment. Cases they handle include citizenship/naturalization and replacing or renewing a Green Card.",
+            "ServicesOffered": "Help completing forms, Filings with USCIS",
+            "AreasofLegalAssistance": "Naturalization/Citizenship",
+            "Lat": 44.846189,
+            "Lng": -93.238496,
+            "Address": "2300 E. 88th Street, Bloomington, MN 55425",
+            "Contact": "(952) 564-3767, http://immigranthope.org/bloomington/ , bloomington@immigranthope.org",
+          },
+          {
+            "Name": "Mid-Minnesota Legal Aid-Immigration Law Project",
+            "Description": "Mid-Minnesota Legal Aid's Immigration Law Project provides direct legal services to address the critical needs of eligible immigrant clients.",
+            "ServicesOffered": "Help completing forms, Filings with USCIS, Representation at Asylum Interviews (Credible Fear Interviews, Reasonable Fear Interviews), Representation before the Immigration Court, Representation before the Board of Immigration Appeals (BIA), Federal court appeals",
+            "AreasofLegalAssistance": "Adjustment of Status, Asylum applications, Consular Processing, Deferred Action for Childhood Arrivals (DACA), Employment authorization, Family-based petitions, NACARA, Naturalization/Citizenship, Removal hearings, Special Immigrant Juvenile Status, T visas, Temporary Protected Status (TPS), U visas, Violence Against Women Act (VAWA) petitions",
+            "Lat": 44.980868,
+            "Lng": -93.273573,
+            "Address": "430 1st Ave N., Suite 300, Minneapolis, MN 55401",
+            "Contact": "(612) 332-1441, http://www.mylegalaid.org , MPLSimmigrationintake@mylegalaid.org",
+          },
+          {
+            "Name": "Park Avenue Legal Clinic",
+            "Description": "Park Avenue Legal Clinic, a joint project of Park Avenue United Methodist Church and the Volunteer Lawyers Network, provides free brief advice, service, and referral in civil law matters, including immigration, on a walk-in basis most Thursdays between 3:00 and 5:00 p.m. First-come, first-served.",
+            "ServicesOffered": "Help completing forms, Filings with USCIS",
+            "AreasofLegalAssistance": "Adjustment of Status, Asylum applications, Consular Processing, Deferred Action for Childhood Arrivals (DACA), Employment authorization, Employment-based immigrant and non-immigrant petitions, Family-based petitions, NACARA, Naturalization/Citizenship, Removal hearings, Special Immigrant Juvenile Status, T visas, Temporary Protected Status (TPS), U visas, Violence Against Women Act (VAWA) petitions",
+            "Lat": 44.941017,
+            "Lng": -93.265632,
+            "Address": "3400 Park Ave S., Park Avenue United Methodist Church, Minneapolis, MN 55404",
+            "Contact": "(612) 825-6864 ext. 564, http://www.vlnmn.org , colleen.beebe@vlnmn.org",
+          },
         ]
      };
      $.each(json1.organizations, function (key, data) {
