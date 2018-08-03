@@ -1,0 +1,660 @@
+<html>
+  <head>
+    <title>Text Adventure by Primrose West</title>
+    <meta charset="UTF-8">
+    <script src = "p5.js"></script>
+  </head>
+<body>
+  <h1><label id = "labelTitle">//</label></h1>
+  <h4><label id = "labelAuthor">//</label></h4>
+  
+  <label id = "labelDescription">***This Gets Changed***</label><br><br>
+  
+  <button id = "button1">//</button><br>
+  <button id = "button2">//</button><br>
+  <button id = "button3">//</button><br>
+  <button id = "button4">//</button><br>
+  <button id = "button5">//</button><br>
+  
+<script> 
+  var labelTitle = document.getElementById("labelTitle");
+  var labelAuthor = document.getElementById("labelAuthor");
+  var labelDescription = document.getElementById("labelDescription");
+  var button1 = document.getElementById("button1");
+  var button2 = document.getElementById("button2");
+  var button3 = document.getElementById("button3");
+  var button4 = document.getElementById("button4");
+  var button5 = document.getElementById("button5");
+  
+  function setup()
+  {
+    textSize(30);
+		fill(0,0,0);
+		
+		labelTitle.innerHTML = "Yours Truly: A Text Adventure";
+		
+		labelAuthor.style.visibility="visible";
+		labelAuthor.innerHTML = "By Primrose West";
+		
+		button1.textContent = "Dismiss Call";
+		button2.textContent = "Answer";
+		
+		button2.style.visibility = "visible";
+		
+		button1.onclick = function () {actionDismissCall()};
+		button2.onclick = function () {actionTakeCall()};
+		
+		button3.style.visibility="hidden";
+		button4.style.visibility="hidden";
+		button5.style.visibility="hidden";
+		
+		labelDescription.innerHTML = 
+			"Your best friend has just gotten back from a trip to Sweden. " + 
+			"They send you a message saying \"Pick up urgent\" and your phone rings immediately.<br><br>" +
+			"What do you do?";
+  }
+	
+	function actionDismissCall()
+	{
+		labelTitle.innerHTML = "Business as usual";
+		labelAuthor.style.visibility="hidden";
+		
+		labelDescription.innerHTML = 
+			"You decide to dismiss the call and consider calling them back later. " +
+			"You think about all of the things you must do today, and consider calling them back later.<br><br>" +
+			" What should you start with?";
+		
+		button1.textContent = "Mow the lawn";
+		button2.textContent = "File Taxes";
+		button3.textContent = "Clean the living room";
+		button4.textContent = "Wash the car";
+		
+		button1.onclick = function () {actionWhereIsFriend()};
+		button2.onclick = function () {actionWhereIsFriend()};
+		button3.onclick = function () {actionWhereIsFriend()};
+		button4.onclick = function () {actionWhereIsFriend()};
+		
+		button3.style.visibility="visible";
+		button4.style.visibility="visible";
+	}
+	
+	function actionTakeCall()
+	{
+		labelTitle.innerHTML = "The Beginning";
+		labelAuthor.style.visibility="hidden";
+		labelDescription.innerHTML =
+			"Your friend calls to tell you that something very unfortunate has come up and they need to speak " +
+			"with you in person. They decide that they would like to meet you at a sit-in restaurant later today " +
+			"which you promptly agree to.<br><br>" + 
+			"Upon meeting your friend, you find that they look very tired and distressed." +
+			"You ask what's wrong and they tell you." +
+			" Things are not well at home; your best friend has found their spouse to be cheating on them" +
+			" with an old friend of theirs. " +
+			"The kids have become complicit and stopped going to school, and their spouse has spent globs of money" +
+			" as a result of their extravagent fling." +
+			" Your best friend finally breaks it to you: they have become depressed and plan to commit suicide.<br><br>" +
+			"How do you respond?";
+		
+		button1.textContent = "Get up and leave";
+		button2.textContent = "\"Leave it all behind friend, let's go!\"";
+		button3.textContent = "\"Hold on friend, let's figure this thing out.\"";
+		button4.textContent = "\"If you were gone tomorrow, I don't know what I'd do.\"";
+		
+		button1.onclick = function () {actionAnxietyAttack()};
+		button2.onclick = function () {actionLeaveItAllBehind()};
+		button3.onclick = function () {actionFigureItOut()};
+		button4.onclick = function () {actionCompassion()};
+		
+		button3.style.visibility="visible";
+		button4.style.visibility="visible";
+		
+	}
+	
+	function actionWhereIsFriend()
+	{
+		labelTitle.innerHTML = "Where are you?";
+		labelAuthor.style.visibility="hidden";
+		labelDescription.innerHTML = 
+			"It's been three months, and you haven't heard back from your friend in awhile. " +
+			"You start to wonder if they're alright, after all they said their call to you, way back when, was urgent. " +
+			"You totally spaced the fact that you never got back to them, and feel a sudden urge to call them.<br><br>" +
+			"No answer.<br><br>" +
+			"You leave the message on their answering machine: \"Where are you?\" <br><br>" +
+			"What shall you do next?";
+		
+		button1.textContent = "Prepare Dinner";
+		button2.textContent = "Clean the bathroom";
+		button3.textContent = "Change the oil in your car";
+		
+		button1.onclick = function () {actionGetRevealed()};
+		button2.onclick = function () {actionGetRevealed()};
+		button3.onclick = function () {actionGetRevealed()};
+		
+		button3.style.visibility="visible";
+		button4.style.visibility="hidden";
+	}
+	
+	function actionGetRevealed()
+	{
+		labelTitle.innerHTML = "The Truth Revealed: The Bad End";
+		labelAuthor.style.visibility="hidden";
+		labelDescription.innerHTML = 
+			"In an attempt to put aside your unease, you decide to read the local newspaper. " + 
+			"You stumble across the obituaries and find your best friend's name among the few others listed. " +
+			"You cannot help but wonder what caused this tragedy.<br><br>" + 
+			"<img src=\"storm_clouds.jpg\"><br><br>" +
+			" You attend your best friend's funeral with tears in your eyes, and the big question on your mind, " +
+			"along with feelings of anger and guilt. " +
+			"When all is said and done, you offer to take your best friend's spouse back home. " +
+			"They reveal to you that the cause of death was suicide. They had no idea your best friend was depressed. ";
+		
+		button1.textContent = "Try Again";
+		
+		button1.onclick = function () {setup()};
+		
+		button2.style.visibility="hidden";
+		button3.style.visibility="hidden";
+	}
+	
+	function actionAnxietyAttack()
+	{
+		labelTitle.innerHTML = "Anxiety Attack";
+		labelAuthor.style.visibility="hidden";
+		labelDescription.innerHTML = 
+			"What your friend tells you greatly upsets you and puts you into a state of great panic." +
+			" You intensely worry about your friend, but just can't think of anything to say that will help them out of this state. " +
+			"So you walk out in a rushed pace. " +
+			"You're already out the door before your friend can react, they are saddened by your reaction. " +
+			"They go home to figure out how to plan out their demise.<br><br>" +
+			"To try and distract yourself you think about what you need to work on at home. <br><br>" +
+			"What do you start with?";
+		
+		button1.textContent = "Mow the lawn";
+		button2.textContent = "Wash the car";
+		button3.textContent = "Do the dishes";
+		button4.textContent = "Mop the floors";
+		
+		button3.style.visibility="visible";
+		button4.style.visibility="visible";
+		
+		button1.onclick = function () {actionWhereIsFriend()};
+		button2.onclick = function () {actionWhereIsFriend()};
+		button3.onclick = function () {actionWhereIsFriend()};
+		button4.onclick = function () {actionWhereIsFriend()};
+	}
+	
+	function actionLeaveItAllBehind()
+	{
+		labelTitle.innerHTML = "It's High Noon";
+		
+		labelDescription.innerHTML =
+			"Your friend sees your reasoning and starts to ponder what it would be like to start anew. " +
+			"\"But how?\" they wonder. How could they start over again? " +
+			"You suggest that maybe they could go back to school and get into a new career! " +
+			"But your friend no longer has the financing to pursue this path. " +
+			"Your friend also reveals that their spouse got into trouble with some debt collection agencies, and has sent bounty hunters after them and the rest of the family." +
+			" You two need to come up with a plan to gain a large sum of money, and lay low " +
+			"in a quick amount of time. But how can you two do it? " +
+			"Your friend offers a solution, but they're not sure you're going to like it.<br><br>" +
+			"\"We need to pull a heist,\" they tell you. " +
+			"You're slightly baffled on the one hand, but on the other hand, " +
+			"this could be just the thrill your friend needs to get past their depression. <br><br>" +
+			"You suggest a few other strategies that you two could pursue to make a big take, but your friend leaves it up to you to decide. <br>" +
+			"What will you decide?";
+		
+		button1.textContent = "Pull a heist; rob a large bank";
+		button2.textContent = "Distribute self-grown cannabis products";
+		button3.textContent = "Start a cult that must pay tribute";
+		button4.textContent = "Offer to pull off hits on given targets";
+		
+		button1.onclick = function () {actionTheBigHeist()};
+		button2.onclick = function () {actionGetWeed()};
+		button3.onclick = function () {actionGetCultish()};
+		button4.onclick = function () {actionGetHitman()};
+	}
+	
+	function actionFigureItOut()
+	{
+		labelTitle.innerHTML = "One Problem at a Time";
+		
+		labelDescription.innerHTML =
+			"Your best friend doesn't even know where to begin, from their spouse cheating," +
+			" to financial issues, to getting the kids back into school " +
+			"and avoiding legal trouble. You say to your friend what you meant from the " +
+			"start: \"One problem at a time.\"<br><br>" +
+			"So, where do we start?";
+		
+		button1.textContent = "Spouse";
+		button2.textContent = "Children";
+		button3.textContent = "Finances";
+		
+		button4.style.visibility="hidden";
+		
+		button1.onclick = function () {actionGetSpouse()};
+		button2.onclick = function () {actionGetChildren()};
+		button3.onclick = function () {actionGetFinances()};
+	}
+	
+	function actionCompassion()
+	{
+		labelTitle.innerHTML = "Compassion";
+		
+		labelDescription.innerHTML =
+			"A tear streams down your friend's face, they quickly wipe it away. " +
+			"They look at you as if that was exactly what they needed to hear. " +
+			"You offer them enough money to help them get back on their feet, " +
+			"and you offer them the spare bedroom so as to help get your friend away from it all.<br><br> " +
+			"They take it.<br><br>" +
+			"Some time passes, and your best friend is able to find a new job, " +
+			"divorce their spouse, and get their kids back into school. " +
+			"Your friend reveals that the kids just needed some time away from it all too. " +
+			"They want to know how they can ever repay you for what you did for them.";
+		
+		button1.textContent = "\"Your presence was enough for me, friend.\"";
+		button2.textContent = "\"Just set those kids on the right path, friend.\"";
+		button3.textContent = "\"Spend some more time with me?\"";
+		
+		button4.style.visibility="hidden";
+		
+		button1.onclick = function () {actionBusinessAsUsual2()};
+		button2.onclick = function () {actionBusinessAsUsual3()};
+		button3.onclick = function () {actionBusinessAsUsual4()};
+	}
+	
+	function actionTheBigHeist()
+	{
+		labelTitle.innerHTML = "The Big Heist"
+		
+		labelDescription.innerHTML =
+			"You and your friend prepare for a big heist on a very secure depository. " +
+			"Failure could result in countless felony charges and fines, " +
+			"as well as imprisonment up to 30 years." +
+			"However, success could yield wealth beyond comprehension. " +
+			"You two would be set for life!<br><br>" +
+			"The both of you put together a team, plans to breach the perimeter, " +
+			"and plans for getaway.<br><br>" +
+			"First, determine how you want to breach the depository. " +
+			"You can go in loud, guns blazing, but you'll need to be quick " +
+			"and take out as many cameras as you can. " +
+			"You'll also need to find access to the safe, " +
+			"which is locked via key card. " +
+			"The alternative is to lay low and breach from the roof. " +
+			"Alarms will go off either way, but going in through the roof, " +
+			"will make for an easier escape. " +
+			"Keep in mind the building has about 6 floors; " +
+			"if you go in loud, you'll need to work your way up and back down all of them. " +
+			"The method by which you go in will also determine your getaway method. <br><br>" +
+			"So, what will it be? Loud or quiet?<br><br>" +
+			"<img src = \"number_zero.png\"><br><br>";
+		
+		button1.textContent = "Guns Blazing";
+		button2.textContent = "Stealth";
+		
+		button3.style.visibility="hidden";
+		button4.style.visibility="hidden";
+		
+		button1.onclick = function () {actionGetLoud()};
+		button2.onclick = function () {actionGetStealth()};
+	}
+	
+	function actionGetWeed()
+	{
+		labelTitle.innerHTML = "Green Stuff";
+		
+		labelDescription.innerHTML =
+			"You and your friend decide to start raising marijuana plants " +
+			"in your home town, where it is currently illegal. " +
+			"You start selling, and the profits are enormous. " +
+			"Before you know it, you and your friend decide it's safe to finally try " +
+			"this stuff.<br><br>" +
+			"<img src = \"number_nine.jpg\"><br><br>" +
+			"This is gonna be a wild ride...";
+		
+		button1.textContent = "Party hardy!!!";
+		button2.textContent = "What it's like to be buzzed and high, oh my... \(Drink Booze\)";
+		button3.textContent = "Gambling never felt so free!";
+		
+		button4.style.visibility ="hidden";
+		
+		button1.onclick = function () {actionGetWhacked()};
+		button2.onclick = function () {actionGetWhacked()};
+		button3.onclick = function () {actionGetWhacked()};
+	}
+	
+	function actionGetCultish()
+	{
+		labelTitle.innerHTML = "Cult Founders";
+		
+		labelDescription.innerHTML =
+			"You and your friend decide that starting up a cult and having " +
+			"members pay a fee to find \"spiritual guidance,\"" +
+			"will allow you to raise enough funds to be rid of all debts. " +
+			"After some time passes, you quickly realize that your financial gains are " +
+			"tenfold! Your cult has amassed over 200 followers, all of which " +
+			"pay approximately $200 per month to seek false enlightenment.<br><br>" +
+			"A group of people would like to join your cult, " +
+			"but to keep things legitimate you must hold your potential clients " +
+			"to certain standards. <br><br>" +
+			"<img src =\"number_zero.png\"><br><br>" +
+			"Each end up doing really well " +
+			"on the trials you set for them, so it is up to you " +
+			"to decide who gets in next: ";
+		
+		button1.textContent = "A shady looking man with some dealings in past crime";
+		button2.textContent = "A young, blonde woman, seeking enlightenment";
+		button3.textContent = "A non-binary college student looking to understand beyond what their textbooks tell them";
+		
+		button4.style.visibility = "hidden";
+		
+		button1.onclick = function () {actionGetWhacked()};
+		button2.onclick = function () {actionGetWhacked()};
+		button3.onclick = function () {actionGetWhacked()};
+	}
+	
+	function actionGetHitman()
+	{
+		labelTitle.innerHTML = "Assassination Attempt";
+		
+		labelDescription.innerHTML = 
+			"You and your friend decide that you can make a profit " +
+			"from ending the lives of others who have royally taken advantage " +
+			"of organized crime leaders.<br><br>" +
+			"<img src = \"number_seven.jpg\"><br><br>" +
+			"The following contracts are offered via a secure site on the dark web: ";
+		
+		button1.textContent = "Danielle Madoff; $10000";
+		button2.textContent = "Butch Mandalow; $10000";
+		button3.textContent = "Felix Bendoffzky; $10000";
+		button4.textContent = "Muhammed Versa; $10000";
+		button5.textContent = "Henry Bentworthy; $10000";
+		
+		button5.style.visibility = "visible";
+		
+		button1.onclick = function () {actionGetWhacked()};
+		button2.onclick = function () {actionGetWhacked()};
+		button3.onclick = function () {actionGetWhacked()};
+		button4.onclick = function () {actionGetWhacked()};
+		button5.onclick = function () {actionGetWhacked()};
+	}
+	
+	function actionGetLoud()
+	{
+		labelTitle.innerHTML ="Going In Loud";
+		labelDescription.innerHTML =
+			"Your team of five, including you and your friend, " + 
+			"blows open the front door to the depository. " +
+			"You climb up each floor via staircase, shooting and destroying every " +
+			"camera in sight, until you make it to the fifth floor. " +
+			"On the fifth floor you find two high level security officers carrying key cards. " +
+			"You and your team are successfully able to neutralize them and " +
+			"secure their key cards. You proceed up to the sixth floor " +
+			"where your team drills in to the door protecting access to the safe." +
+			"You and your best friend hold up the key cards to the sensors, and " +
+			"alarms begin to go off as the hatch opens. " +
+			"You and your team fill your bags with as much score as you can each take. " +
+			"You make a quick break for the staircase down to the ground floor. " +
+			"You are met with heavy resistance and lose team members on each floor, " +
+			"until it's just you and your best friend.<br><br>" +
+			"You both hop into the van that was conspicuously parked outside beforehand " +
+			"and start driving as fast as you can away from the scene. " +
+			"Before you can make it out, you come to an intersection where " +
+			"the road \"Y's\" off in two separate directions, " +
+			"both of which are blockaded by dumpster trucks.<br><br>" +
+			"You don't have very many options: ";
+		
+		button1.textContent = "Left";
+		button2.textContent = "Right";
+		
+		button3.style.visibility ="hidden";
+		button4.style.visibility = "hidden";
+		
+		button1.onclick = function () {actionGetWhacked()};
+		button2.onclick = function () {actionGetWhacked()};
+	}
+	function actionGetStealth()
+	{
+		labelTitle.innerHTML ="Stealthy Line of Thought";
+		labelDescription.innerHTML =
+			"Your team is able to secure two helicopters to fit " +
+			"all five members of your team. " +
+			"You and your team fly in and land on the roof of the depository " +
+			"and start drilling a small hole, directly above access to the safe. " +
+			"Team members from the helicopters idling above drop rapelling cables " +
+			"down into the safe room." +
+			"You and your team bust down the door to the staircase that leads to the " +
+			"fifth floor and catch two high level security officers carrying key cards." +
+			"They are quickly neutralized, and your team heads back up to the sixth floor" +
+			" to unlock the hatch, in which an alarm goes off. Your team starts " +
+			"to quickly shove as much score as they can into their bags. " +
+			"You and your best friend climb up the ropes into one helicopter while " +
+			"the other team member climbs up into the second helicopter.<br><br>" +
+			"You immediately take off but police choppers have already flooded the scene " +
+			"and are now taking aim at you. " +
+			"A missle shot from a police helicopter directly impacts your teammates' " +
+			"helicopter. It explodes and goes down, no one is likely to have survived. " +
+			"The team member flying your helicopter is panicked and suddenly shot " +
+			"by the police, and you are now faced with a serious problem. " +
+			"Neither you, nor your best friend, know how to fly a helicopter:<br><br>";
+		
+		button1.textContent = "Jump";
+		button2.textContent = "Stick around for the crash landing";
+		
+		button3.style.visibility = "hidden";
+		button4.style.visibility = "hidden";
+		
+		button1.onclick = function () {actionGetWhacked()};
+		button2.onclick = function () {actionGetWhacked()};
+	}
+	function actionGetWhacked()
+	{
+		labelTitle.innerHTML ="The Mafia";
+		labelDescription.innerHTML =
+			"Your actions have led you to be knocked out and kidnapped by " +
+			"a member of the mafia. " +
+			"Before you stands the don; you see that your best friend is bound and gagged." +
+			" The don doesn't appear anything like a member of the mafia. He is wearing " +
+			"jeans and his hair is thinning, he is clearly an older gentleman. " +
+			"He hands you a pistol, which you immediately drop. He punches you " +
+			"forcing you to comply with his actions.<br><br>" +
+			"\"You newbies are all the same; you try to rob a bank, sell dope or crack, " +
+			"take out my boys, or start drawing money away from me by raising cults! " +
+			"I'm gonna give you a choice. You can blow your brains out, or shoot your " +
+			"friend here. If you don't do anything, I'll whack the both of you.\"";
+		
+		button1.textContent = "Shoot yourself";
+		button2.textContent = "Shoot your best friend";
+		
+		button1.onclick = function () {actionHighRoad()};
+		button2.onclick = function () {actionDeadEnd()};
+ 	}
+	function actionGetSpouse()
+	{
+		labelTitle.innerHTML ="Dealing with the Spouse";
+		labelDescription.innerHTML =
+			"You offer to help your friend in dealing with their spouse. " +
+			"You offer to talk to them, and your friend hopes some good will come about " +
+			"from this decision.<br><br>" +
+			"When you arrive at your friend's house, you proceed to talk to their spouse " +
+			"in the other room. Unfortunately they don't listen to a word you say; " +
+			"they seem to be attracted to you. ";
+		
+		button1.textContent = "Give in to their attraction";
+		button2.textContent = "Insist that they listen to you";
+		
+		button3.style.visibility="hidden";
+		button4.style.visibility="hidden";
+		
+		button1.onclick = function () {actionGetInfidelity()};
+		button2.onclick = function () {actionBusinessAsUsual2()};
+	}
+	function actionGetChildren()
+	{
+		labelTitle.innerHTML ="Dealing with the Kids";
+		labelDescription.innerHTML =
+			"You offer to help your friend in helping them dealing with their children. " +
+			"You offer to talk to them and your friend hopes some good will come from " +
+			"this decision. " +
+			"When you arrive at your friend's house, you proceed to talk to the kids " +
+			"in the other room. Unfortunately they don't seem to want to pay attention! ";
+		
+		button1.textContent = "Hit Them";
+		button2.textContent = "Insist that they listen to you";
+		
+		button3.style.visibility="hidden";
+		button4.style.visibility="hidden";
+		
+		button1.onclick = function () {actionGetAbusive()};
+		button2.onclick = function () {actionBusinessAsUsual2()};
+	}
+	function actionGetFinances()
+	{
+		labelTitle.innerHTML ="Dealing with Money";
+		labelDescription.innerHTML =
+			"You offer to help your friend in dealing with their finances. " +
+			"You offer to talk to your friend about their options, and your friend " + 
+			"hopes some good will come from " +
+			"this decision. " +
+			"When you arrive at your friend's house, you proceed to talk to your best friend" +
+			"in the other room. Unfortunately they're too caught up in the stress of " +
+			"being home to pay attention to you";
+		
+		button1.textContent = "Leave";
+		button2.textContent = "Insist that they listen to you";
+		
+		button3.style.visibility="hidden";
+		button4.style.visibility="hidden";
+		
+		button1.onclick = function () {actionGetOut()};
+		button2.onclick = function () {actionBusinessAsUsual2()};
+	}
+	function actionBusinessAsUsual2()
+	{
+		labelTitle.innerHTML = "Business As Usual";
+		labelDescription.innerHTML =
+		"You think about all of the things you must do today, and consider calling them back later.<br><br>" +
+			" What should you start with?";
+		
+		button1.textContent = "Mow the lawn";
+		button2.textContent = "File Taxes";
+		button3.textContent = "Clean the living room";
+		button4.textContent = "Wash the car";
+		
+		button1.onclick = function () {actionBestEnd()};
+		button2.onclick = function () {actionBestEnd()};
+		button3.onclick = function () {actionBestEnd()};
+		button4.onclick = function () {actionBestEnd()};
+		
+		button3.style.visibility="visible";
+		button4.style.visibility="visible";
+	}
+	
+	function actionHighRoad()
+	{
+		labelTitle.innerHTML = "High Road";
+		
+		labelDescription.innerHTML =
+			"Your friend tries to scream through the gag. " +
+			"He sees you point the gun towards yourself, and tries to motion towards " +
+			"himself, as signaling for you to kill him. " +
+			"The loud gunshot makes your friend's ears ring; he falls to the ground and " +
+			"sobs.<br><br>" +
+			"Game Over.";
+		
+		button1.textContent = "Try Again";
+		button2.style.visibility = "hidden";
+		
+		button1.onclick = function () {setup()};
+	}
+	function actionDeadEnd()
+	{
+		labelTitle.innerHTML = "Dead End";
+		
+		labelDescription.innerHTML =
+			"Your friend tries to scream through the gag. " +
+			"He sees you point the gun directly towards his chest. " +
+			"He closes his eyes, preparing for the worst. " +
+			"The first gunshot goes off, and your best friend stops screaming. " +
+			"He's still sitting up, nearly unshaken by the penetration. " +
+			"The shock must have somehow propelled his body... " +
+			"You fire two more quick shots.<br><br>" +
+			"He finally falls onto the cold, hard pavement.<br><br>" +
+			"The don removes your bounds, you're free to go, " +
+			"unsure of how you'll live the rest of your life.<br><br>" +
+			"Game Over.";
+		
+		button1.textContent = "Try Again";
+		button2.style.visibility = "hidden";
+		
+		button1.onclick = function () {setup()};
+	}
+	
+	function actionBestEnd()
+	{
+		labelTitle.innerHTML = "All's Well: Best End";
+		labelDescription.innerHTML = 
+			"Your best friend proceeded to enjoy life from then on, and so did you. " +
+			"To think about what could have happened petrifies you; you almost lost a " +
+			"friend to suicide, to complications... " +
+			"You're just glad things turned out alright.";
+		
+		button1.textContent = "You got the best ending; now find the other endings!";
+		button2.style.visibility = "hidden";
+		button3.style.visibility = "hidden";
+		button4.style.visibility="hidden";
+		
+		button1.onclick = function () {setup()};
+	}
+	function actionGetInfidelity()
+	{
+		labelTitle.innerHTML = "Cheater, Cheater"
+		
+		labelDescription.innerHTML =
+			"After finding out that you slept with their spouse, " +
+			"your best friend became your worst enemy. " +
+			"They found the courage to divorce their spouse, and now " +
+			"you're only left to ponder what could have been. ";
+		
+		button1.textContent = "Try Again";
+		
+		button2.style.visibility="hidden";
+		
+		button1.onclick = function () {setup()};
+	}
+	function actionGetAbusive()
+	{
+		labelTitle.innerHTML = "Abuse has no Place in the Home";
+		
+		labelDescription.innerHTML =
+			"After finding out that you abused their kids, your friend promptly " +
+			"kicked you out of their house. They decided that moving the kids " +
+			"to a different school would solve the issue. Or at least, " +
+			"that was the last you heard before your friend decided that " +
+			"they no longer wanted to be friends with you. " +
+			"You were left to ponder what could have been.";
+		
+		button1.textContent = "Try Again";
+		
+		button2.style.visibility="hidden";
+		
+		button1.onclick = function () {setup()};
+	}
+	function actionGetOut()
+	{
+		labelTitle.innerHTML = "Big help";
+		
+		labelDescription.innerHTML =
+			"After leaving abruptly, your friend realized they couldn't rely on you for " +
+			"help to begin with. The friendship naturally dissolved, and you were " +
+			"left to ponder what could have been. ";
+		
+		button1.textContent = "Try Again";
+		
+		button2.style.visibility="hidden";
+		
+		button1.onclick = function () {setup()};
+	}
+	
+
+	</script>
+	</body>
+</html>
